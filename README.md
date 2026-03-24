@@ -8,7 +8,6 @@ You type a question. Hit enter. The cursor blinks. And then... text starts appea
 
 The magical part? It doesn't scroll down your screen. It *updates in place*. Same line, same space, just... changing.
 
----
 
 ## Demo
 
@@ -20,7 +19,6 @@ make run PROMPT="Why is the sky blue?"
 uvx --with python-dotenv --with requests python api-call.py "Why is the sky blue?"
 ```
 
----
 
 ## The Terminal Dance
 
@@ -47,7 +45,6 @@ sys.stdout.write("\033[J")                         # Clear to end of screen
 
 It's like a scoreboard at a live game — same position, fresh numbers each time. The `F` (Form feed) code moves the cursor up, `\r` returns to column zero, and `\033[J` wipes everything below. Three escape codes. That's all it takes.
 
----
 
 ## Architecture
 
@@ -64,7 +61,6 @@ flowchart LR
     H --> I[Terminal Display]
 ```
 
----
 
 ## The Three-Second Replay
 
@@ -107,7 +103,6 @@ Here's what's actually happening on your screen, frame by frame:
 
 Same box. Same position. New content. That's the cursor doing its job.
 
----
 
 ## The Loading Spinner Analogy
 
@@ -117,7 +112,6 @@ Reasoning tokens do the same thing.
 
 When you watch the model "think" — those streaming thoughts appearing in real-time — you're not staring at a blank wall. You see it working. Progress. Proof of life. That's why it's called "reasoning" and not just "loading" — because seeing the work reduces anxiety, just like the spinner did for web pages.
 
----
 
 ## What Are Reasoning Tokens?
 
@@ -155,7 +149,6 @@ renderer.render("".join(reasoning), "".join(content))
 
 The renderer gets both, splits them into two buckets, and displays them in two different visual styles.
 
----
 
 ## How Does It Output Both Without Mixing?
 
@@ -205,7 +198,6 @@ parts.append(styled(content_text or "...", bold=True))
 
 Two ANSI codes. Two visual styles. Same cursor, two jobs.
 
----
 
 ## Wait, Isn't That Just Chain of Thought?
 
@@ -237,7 +229,6 @@ You might have heard of CoT — "think step by step." That's when you *ask* the 
 - **CoT**: You ask → reasoning becomes part of your response → answer is cluttered, you pay for every thinking token
 - **Native reasoning tokens**: Built into the model → reasoning shown during streaming only → final answer stays clean, you don't pay for thinking
 
----
 
 ## Full Flow
 
@@ -266,14 +257,12 @@ sequenceDiagram
     T->>U: Done!
 ```
 
----
 
 ## Prerequisites
 
 - [uv](https://github.com/astral-sh/uv) installed
-- NVIDIA API key (get one at [NVIDIA AI](https://www.nvidia.com/en-us/ai/))
+- NVIDIA API key (get one at [NVIDIA AI](https://build.nvidia.com/))
 
----
 
 ## Setup
 
@@ -287,7 +276,6 @@ sequenceDiagram
    NVIDIA_API_KEY=nvapi-your-key-here
    ```
 
----
 
 ## Usage
 
@@ -315,7 +303,6 @@ uvx --with python-dotenv --with requests python api-call.py "Hello" --no-reasoni
 uvx --with python-dotenv --with requests python api-call.py "Hello" --no-stream
 ```
 
----
 
 ## The End
 
@@ -343,13 +330,8 @@ The loading spinner changed how we feel about waiting on the web. Reasoning toke
 
 And the cursor? It's just doing its job. Keeping it all in place.
 
----
 
 **What happens behind your blinking cursor?**
 
-I'd love to hear your thoughts.
+I'd love to see you think...
 
----
-
-#AI #MachineLearning #LLM #TechStory #Coding
-# nvidia-build-test
